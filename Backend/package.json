@@ -1,0 +1,23 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "mern project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrishnaBir/bookstore-from-frontend.git"
+  },
+  "author": "noni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KrishnaBir/bookstore-from-frontend/issues"
+  },
+  "homepage": "https://github.com/KrishnaBir/bookstore-from-frontend#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
