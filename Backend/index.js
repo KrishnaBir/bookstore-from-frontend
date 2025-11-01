@@ -1,12 +1,16 @@
 import dotenv from 'dotenv'
 import express from 'express'
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
+import cors from "cors"
+
 
 import bookRoute from "./route/book.route.js"
 
+const app = express()
+app.use(cors())
+
 dotenv.config();
 
-const app = express()
 
 const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI
