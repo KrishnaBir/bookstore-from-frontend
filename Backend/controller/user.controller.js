@@ -25,3 +25,30 @@ export const signup = async(req, res)=>{
         res.status(500).json({message: "internal error"})
     }
 }
+
+export const login = async (req, res)=>{
+    try {
+        const{email, password} = req.body
+        
+        const user = await User.findOne({email})
+        const isMatch = await bcrypptjs.compare(password, user.password)
+    
+        if(!user || !isMatch){
+            res.status(400).json({message: "invalid credentials"})
+        }else{
+            res.status(200).
+                json({
+                    message: "successfully login",
+                    user:{
+                        _id: user._id,
+                        fullname: user.fullname,
+                        email: user.email
+                    }
+                })
+        }
+    } catch (error) {
+        console.log("error", error.message)
+        res.status(500).json({message: "internal error"})
+    }
+
+}
