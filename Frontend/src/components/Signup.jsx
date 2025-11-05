@@ -20,15 +20,17 @@ function Signup() {
     }
 
     axios.post("http://localhost:4001/user/signup", userInfo)
-    .then((res)=>{
-      console.log(res.data);
+      .then((res)=>{
+        console.log(res.data);
       if(res.data){
-        alert("signup successfull")
-      }
-    }).catch((error)=>{
-      console.log(error);
-      alert("Error" + error)
-    })
+          alert("signup successfull")
+        }
+      }).catch((err) => {
+        if (err.response) {
+          console.log(err);
+          alert("Error" + err.response.data.message)
+        }
+      })
   };
   return (
     <>
