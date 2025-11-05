@@ -24,6 +24,7 @@ function Signup() {
         console.log(res.data);
       if(res.data){
           alert("signup successfull")
+          localStorage.setItem("Users", JSON.stringify(res.data.user))
         }
       }).catch((err) => {
         if (err.response) {
