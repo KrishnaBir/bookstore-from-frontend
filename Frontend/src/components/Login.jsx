@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 function Login() {
   const {
@@ -21,14 +22,14 @@ function Login() {
     .then((res)=>{
       console.log(res);
       if(res.data){
-          alert("login successfull")
+          toast.success("login successfull")
           localStorage.setItem("Users", JSON.stringify(res.data.user))
         }
     })
     .catch((err)=>{
       console.log(err);
       if (err.response) {
-          alert("Error" + err.response.data.message)
+          toast.error("Error" + err.response.data.message)
         }
     })
 
