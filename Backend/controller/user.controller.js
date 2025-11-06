@@ -22,7 +22,7 @@ export const signup = async(req, res)=>{
             user: {
                 _id: createdUser._id,
                 fullname: createdUser.fullname,
-                email: createdUser.fullname
+                email: createdUser.email
             }
         })
 

@@ -21,7 +21,7 @@ function Signup() {
 
     axios.post("http://localhost:4001/user/signup", userInfo)
       .then((res)=>{
-        console.log(res.data);
+        console.log(res);
       if(res.data){
           alert("signup successfull")
           localStorage.setItem("Users", JSON.stringify(res.data.user))
