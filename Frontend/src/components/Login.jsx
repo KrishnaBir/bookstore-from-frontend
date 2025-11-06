@@ -20,9 +20,16 @@ function Login() {
     await axios.post("http://localhost:4001/user/login", userInfo)
     .then((res)=>{
       console.log(res);
+      if(res.data){
+          alert("login successfull")
+          localStorage.setItem("Users", JSON.stringify(res.data.user))
+        }
     })
     .catch((err)=>{
       console.log(err);
+      if (err.response) {
+          alert("Error" + err.response.data.message)
+        }
     })
 
   }
