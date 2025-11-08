@@ -13,6 +13,8 @@ function LogOut() {
             localStorage.removeItem("Users")
 
             toast.success("Logout successfully")
+
+            window.location.reload();
         } catch (error) {
             toast.error("Error : " + error.message)
         }
