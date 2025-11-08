@@ -23,6 +23,14 @@ function Login() {
       console.log(res.data);
       if(res.data){
           toast.success("login successfull")
+          
+          
+
+          document.getElementById("my_modal_3").close()
+          setTimeout(()=>{
+            window.location.reload()
+          },1000)
+
           localStorage.setItem("Users", JSON.stringify(res.data.user))
         }
     })
@@ -30,6 +38,7 @@ function Login() {
       console.log(err);
       if (err.response) {
           toast.error("Error" + err.response.data.message)
+          setTimeout(()=>{},2000)
         }
     })
 

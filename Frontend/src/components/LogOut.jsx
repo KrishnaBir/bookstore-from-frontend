@@ -14,9 +14,14 @@ function LogOut() {
 
             toast.success("Logout successfully")
 
+            setTimeout(() => {
+                window.location.reload()
+            }, 1000)
+
             window.location.reload();
         } catch (error) {
             toast.error("Error : " + error.message)
+            setTimeout(() => {}, 1000)
         }
     }
     return (
